@@ -1,0 +1,33 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+
+@import 'vars';
+@import 'mixins';
+@import 'normalize';
+@import 'header';
+@import 'navbar';
+@import 'skillset';
+@import 'blog-posts';
+@import 'footer';
+@import 'animation';
+
+// STYLES ARE MOBILE FIRST
+
+*:not(.pink-bubble) {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    font-size: $font-size;
+    color: $navy-blue;
+}
+
+body {
+    background: url("../img/background.png");
+    background-size: contain;
+    font-family: $body-font;
+}
+

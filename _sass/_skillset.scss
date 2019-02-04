@@ -1,0 +1,60 @@
+.skillset {
+  padding: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  @include for-desktop-up {
+    margin-top: 10vh;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+  }
+}
+
+.skill-container {
+  @include for-desktop-up {
+    p {
+      font-size: 0.67em;
+      font-weight: $bold;
+      line-height: 2em;
+      max-width: 280px;
+      padding-top: 50px;
+    }
+  }
+}
+
+.pink-bubble {
+  background: $light-pink;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 30px auto;
+  box-shadow: 3px 3px 15px rgba(240, 162, 172, 0.50);
+  @include for-desktop-up {
+    margin: 0;
+    padding: 80px;
+    box-shadow: 10px 5px 25px rgba(240, 162, 172, 0.50);
+  }
+  span {
+    color: $navy-blue;
+    font-size: $mobile-body-font-size;
+    font-weight: $bold;
+    padding-top: 10px;
+    font-size: 3vmax;
+    @include for-desktop-up {
+      font-size: 1.2em;
+      padding-top: 20px;
+    }
+  }
+}
+
+.skill-icon {
+  max-height: 115%;
+}

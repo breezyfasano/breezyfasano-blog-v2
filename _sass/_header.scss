@@ -1,0 +1,53 @@
+header {
+    background: url("../img/header.svg") no-repeat;
+    background-size: cover;
+    background-position: 1% 0%; 
+    min-height: 50vh;
+    @include for-desktop-up {
+        min-height: 75vh;
+        padding: 25px 0 75px 75px;
+    }
+    @include for-tablet-portrait-up {
+        min-height: 80vh;
+    }
+}
+
+.name  { //my name in hero
+    font-size: 4em;
+    font-weight: $bold;
+    font-family: $header-font;
+    text-transform: lowercase;
+    color: $light-pink;
+    @include for-desktop-up {
+        text-align: left;
+        font-size: 4.2em;
+        line-height: 95%;
+    }
+}
+
+.about-text {
+    padding: 15px 0 0 30px;
+    width: 90%;
+    p {
+        padding: 15px 0 55px 0;
+        margin: 0 auto 0 auto;
+        display: block;
+        font-size: 1em;
+        line-height: 6vw;
+        font-family: $body-font;
+        font-weight: 500;
+        color: $navy-blue;
+    }
+    @include for-desktop-up {
+        width: 55%;
+        margin-top: 50px;
+        padding:0;
+        p {
+            line-height: 3.5vw;
+            padding: 20px 0 0 0;
+            text-align: left;
+            font-size: 1.1em;
+            padding: 60px 0 55px 0;
+        }
+    }
+}

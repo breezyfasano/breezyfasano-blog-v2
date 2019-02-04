@@ -1,0 +1,16 @@
+.final-cta {
+  padding: 12% 6% 12% 6%;
+  line-height: 2.4rem;
+  font-weight: $bold;
+  font-size: 1.4rem;
+}
+
+.cta a {
+  color: $dark-pink;
+  transition: all 0.2s linear;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $light-pink;
+  }
+}
