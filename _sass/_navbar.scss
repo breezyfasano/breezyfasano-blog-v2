@@ -1,28 +1,72 @@
 .nav {
-    padding: 3vh 3vh 3vh 3vh;
-    @include for-desktop-up {
-        padding: 25px 0 40px 0;
+  @include for-tablet-portrait-up {
+    padding: 25px 0 0 0;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    //display: none;
+    @include for-tablet-portrait-up {
+      display: block;
     }
-    ul {
-        list-style-type: none;
-        margin:0;
-        padding:0;
-        li {
-            display: inline;
-            padding-right: 30px;
-            @include for-desktop-up {
-                font-size: 1em;
-                font-weight: $semibold;
-                padding-right: 60px;
-            }
-        }
+    li {
+      display: inline-block;
+      padding-right: 30px;
+      @include for-tablet-portrait-up {
+        font-size: 1em;
+        font-weight: $semibold;
+        padding-right: 60px;
+      }
     }
+  }
 }
 
 .nav-links {
-    color: $navy-blue;
-    text-decoration: none;
-    &:hover {
-        color: $light-pink;
-    }
+  color: $navy-blue;
+  text-decoration: none;
+  &:hover {
+    color: $light-pink;
+  }
 }
+
+.open-icon {
+  margin: 3vh 3vh 0 3vh;
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+}
+
+.close-icon,
+#close-icon-li {
+  display: block;
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+}
+
+@include for-phone-only {
+  .nav-mobile-only {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 55vw;
+    height: 100vh;
+    display: block;
+    width:0;
+    overflow-x: hidden;
+    background: $navy-blue;
+    transition: 0.2s all;
+    ul, li {
+      display: block;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 50px;
+      a {
+          color: $light-pink;
+      }
+    }
+  }
+}
+
+// write function that if viewport is less than 1200px apply this class

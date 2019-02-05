@@ -1,0 +1,15 @@
+.header-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.artwork {
+  max-width: 38vw;
+  display: none;
+  @include for-desktop-up {
+    top: 50px;
+    left: 58%;
+    position: absolute;
+    display: block;
+  }
+}

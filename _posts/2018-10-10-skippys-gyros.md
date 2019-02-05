@@ -28,7 +28,10 @@ The navbar could have been made using simple JavaScript and CSS, instead of load
 
 When you do not have enough content to keep your footer at the bottom of the page, some misalignment can occur. On desktop, it aligns fine. However, below you can see the screenshot of what the footer looks like on mobile.
 
-![Alt text](/images/IMG_2982.PNG "Sticky Footer Misalignment on Mobile")
+
+![Alt text]({{ site.baseurl }}/img/IMG_2982.PNG "Sticky Footer Misalignment on Mobile")
+
+
 
 I'm honestly not sure why the footer aligns like this, but my best guess is that it has something to do with the Bootstrap column styles interfering with some bunk mobile styles and specificity issues I implemented. Looking back, I definitely did not understand CSS as much as I thought I did. Specifically, I barely understood Bootstrap.
 

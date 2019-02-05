@@ -1,5 +1,5 @@
 @include for-desktop-up {
-  @keyframes scale-in-center {
+  @keyframes skills-scale-in-center {
     0% {
       transform: scale(0.9);
       opacity: 0;
@@ -14,10 +14,11 @@
     opacity: 0;
   }
 
-  .scale-in-center {
+  .skills-scale-in-center {
     opacity: 0;
-    animation: scale-in-center 0.5s ease-in-out both;
+    animation: skills-scale-in-center 0.5s ease-in-out both;
   }
+  
 
   .ideate {
     animation-delay: 0.5s;
@@ -29,5 +30,23 @@
 
   .develop {
     animation-delay: 1.5s;
+  }
+
+
+  @keyframes scale-in-center {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .scale-in-center {
+    opacity: 0;
+    animation: skills-scale-in-center 0.5s ease-in-out both;
+    animation-delay: .5s;
   }
 }

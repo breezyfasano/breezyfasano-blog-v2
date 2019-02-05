@@ -6,22 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Breezy Fasano</title>
     <link rel="stylesheet" href="https://use.typekit.net/urc7nzr.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="{{
+      "/css/styles.css" | prepend: site.baseurl
+    }}">
   </head>
 
   <body>
     <header>
-      <nav class="nav">
+      <nav class="nav-mobile-only nav">
         <ul>
-          <li><a href="#" class="nav-links">blog</a></li>
-          <li><a href="#" class="nav-links">contact</a></li>
-          <li><a href="#" class="nav-links">github</a></li>
-          <li><a href="#" class="nav-links">dribbble</a></li>
+          <li id="close-icon-li"><a id="close-icon" class="close-icon" href="javascript:void(0)">&times;</a></li>
+          <li><a href="{{ site.url }}/contact" class="nav-links">contact</a></li>
+          <li><a href="https://www.github.com/breezyfasano" class="nav-links">github</a></li>
+          <li><a href="https://www.dribbble.com/breezyfasano" class="nav-links">dribbble</a></li>
         </ul>
       </nav>
-      <div class="about-text">
-        <h1 class="name">Breezy Fasano</h1>
-        {{ content }}
+      <a id="open-icon" href="javascript:void(0)"><svg fill="#0c0934" class="open-icon" id="Layer_1" style="enable-background:new 0 0 32 32;"
+          version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg></a>
+      <div class="header-row">
+        <div class="about-text">
+          
+          <h1 class="name">Breezy Fasano</h1>
+          {{ content }}
+        </div>
+        <img class="artwork" src="img/complete-artwork.png">
       </div>
     </header>
     <section class="skillset">
@@ -31,8 +40,8 @@
           <span>ideate</span>
         </div>
         <p>
-          Lorem ipsum is placeholder text commonly used in the graphic, print,
-          and publishing industries for previewing layouts and visual mockups.
+          Let's explore. I research and discover anything and everything I can
+          relating to a project - this is where the brainstorming comes in.
         </p>
       </div>
       <div class="hidden design skill-container">
@@ -41,8 +50,8 @@
           <span>design</span>
         </div>
         <p>
-          Lorem ipsum is placeholder text commonly used in the graphic, print,
-          and publishing industries for previewing layouts and visual mockups.
+          I use the latest technologies to design a product that is not only
+          beautiful, but has the user in mind every step of the way.
         </p>
       </div>
       <div class="hidden develop skill-container">
@@ -51,8 +60,8 @@
           <span>develop</span>
         </div>
         <p>
-          Lorem ipsum is placeholder text commonly used in the graphic, print,
-          and publishing industries for previewing layouts and visual mockups.
+          The project then is built with HTML, comes to life with some CSS, and
+          becomes interactive with JavaScript.
         </p>
       </div>
     </section>
@@ -60,23 +69,25 @@
       <h1 class="section-title">blog posts</h1>
       <div class="posts-container">
         {% for post in site.posts %}
-        <div class="post">
-          <h3 class="post-name"><a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}</a></h3>
-          <span class="post-date">{{ post.date | date: '%m.%-d.%Y' }}</span>
+        <div class="hidden post">
+          <h3 class="post-name">
+            <a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title }}</a>
+          </h3>
+          <span class="post-date">{{ post.date | date: "%m.%-d.%Y" }}</span>
           <span class="post-preview">{{ post.content }}</span>
         </div>
         {% endfor %}
-        
       </div>
     </section>
     <section class="final-cta">
-      <span class="cta">Check out my code on
+      <span class="hidden cta"
+        >Check out my code on
         <a href="https://www.github.com/breezyfasano">GitHub</a>, and some of my
         designs on
         <a href="https:///www.dribbble.com/breezyfasano">dribbble</a>. If you
         want to collab on a cool project or just geek out on pixels, shoot me
-        <a href="#">a message</a>. :-)</span>
+        <a href="{{ site.url }}/contact">a message</a>. :-)</span
+      >
     </section>
     <footer class="footer"></footer>
   </body>

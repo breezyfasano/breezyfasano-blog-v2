@@ -1,0 +1,80 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import 'vars';
+@import 'mixins';
+
+
+body {
+    background: url("../img/background.png");
+    background-size: contain;
+    font-family: $body-font;
+    margin:0;
+    padding:0;
+}
+
+.form-container {
+    max-width: 800px;
+    background: $navy-blue;
+    color: $light-pink;
+    padding: 50px;
+    border-radius: 0px;
+    margin: 0 auto 0 auto;
+    height: 100vh;
+    @include for-desktop-up {
+        margin: 50px auto 0 auto;
+        border-radius: 20px;
+        height: auto;
+    }
+}
+
+.page-header {
+    font-family: $header-font;
+    padding-bottom: 20px;
+    color: $white-pink;
+}
+
+form, input, textarea {
+    width: 100%;
+
+    @include for-desktop-up {
+        margin: 0 auto 0 auto;
+    }
+}
+
+.input {
+    padding: 8px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border:0;
+    @include for-desktop-up {
+        
+    }
+}
+
+.message {
+    min-height: 100px;
+}
+
+a {
+    text-align: center;
+    color: $white-pink;
+}
+
+.button {
+    border:5px solid $light-pink;
+    border-radius: 35px;
+    font-size: 1.2em;
+    font-weight: $bold;
+    padding: 15px 45px 15px 45px;
+    margin: 35px auto 50px auto;
+    display: block;
+    background: transparent;
+    color: $light-pink;
+    &:hover {
+        color: $white-pink;
+        border: 5px solid $white-pink;
+        cursor: pointer;
+    }
+}

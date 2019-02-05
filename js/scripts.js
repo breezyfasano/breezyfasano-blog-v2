@@ -1,6 +1,33 @@
-"use strict";
+"use strict"
 
-function isElementInViewport(el) { // checks if element passed as perameter is in viewport
+const nav = document.querySelector("nav");
+const openIcon = document.getElementById("open-icon");
+const closeIcon = document.getElementById("close-icon");
+
+
+const openNav = () => {
+  nav.style.width = "55vw";
+};
+
+const closeNav = () => {
+  nav.style.width = 0;
+}
+
+openIcon.addEventListener('click',
+  function () {
+    openNav();
+  }
+);
+
+closeIcon.addEventListener('click',
+  function () {
+    closeNav();
+  }
+);
+
+
+
+const isElementInViewport = (el) => { // checks if element passed as parameter is in viewport
   const getBoundValues = el.getBoundingClientRect();
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
@@ -15,12 +42,24 @@ function isElementInViewport(el) { // checks if element passed as perameter is i
 }
 
 const skills = document.getElementsByClassName("skill-container");
+const posts = document.getElementsByClassName("post");
+const cta = document.querySelector(".cta");
 
 window.addEventListener("scroll", () => {
   for (var item of skills) { // for each skill-container
     if (isElementInViewport(item) == true) { // check if item is in viewport
+      item.classList.replace("hidden", "skills-scale-in-center"); // if it is, remove the class that hides it and add in the css animation
+    }
+  }
+
+  for (var item of posts) { // for each post 
+    if (isElementInViewport(item) == true) { // check if item is in viewport
       item.classList.replace("hidden", "scale-in-center"); // if it is, remove the class that hides it and add in the css animation
     }
+  }
+
+  if (isElementInViewport(cta) == true) { // check if item is in viewport
+    cta.classList.replace("hidden", "scale-in-center"); // if it is, remove the class that hides it and add in the css animation
   }
 });
 

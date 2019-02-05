@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://use.typekit.net/urc7nzr.css" />
+<link rel="stylesheet" href="{{
+      "/css/forms.css" | prepend: site.baseurl
+    }}">
+
+    <div class="form-container">
+        <h1 class="page-header"> {{ page.title }}</h1>
+
+        <form name="contact" method="POST" netlify>
+            <p><label class="label">Your Name: <br><input type="text" class="input" name="name" /></label></p>
+            <p><label class="label">Your Email: <br><input class="input" type=" email" name="email" /></label></p>
+            <p><label class="label">Message:
+                    <br><textarea class="input message" name="message"></textarea></label></p>
+            <p><button class="button" type="submit">Send</button></p>
+            <a href="{{ site.url }}"><h2>Back to the homepage</h2></a>
+        </form>
+    </div>
